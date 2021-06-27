@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'">
+<head>
+<title>Cadastro Cliente</title>
+</head>
+<body>
+
+
+	<!-- CONTENT -->
+	<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+
+		<div class="page-header">
+			<div class="container-fluid">
+				<h1>Cadastro de Cliente</h1>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+			<form method="POST" th:object="${usuario}" class="form-vertical  js-form-loading">
+	
+				<div class="form-group">
+					<label for="nome">Nome</label>
+					<input id="nome" type="text" class="form-control"/>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-8 form-group">
+						<label for="email">Email</label>
+						<input type="text" id="email" class="form-control" />
+					</div>
+					
+					<div class="col-sm-4 form-group">
+						<label for="dataNascimento">Data de nascimento</label>
+						<input type="text" id="telefone" class="form-control" />
+					</div>
+
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-4 form-group">
+						<label for="senha">Senha</label>
+						<input type="text" id="senha" class="form-control" />
+					</div>
+				
+					<div class="col-sm-4 form-group">
+						<label for="confirmaSenha">Confirmação de senha</label>
+						<input type="text" id="confirmaSenha" class="form-control" />
+					</div>
+
+					<div class="col-sm-4 form-group">
+					<label for="ativo">Status</label>
+					  <input class="form-check-input" type="checkbox" value="" id="ativo">
+					  <label class="form-check-label" for="flexCheckDefault">
+					    Ativo
+					  </label>
+					</div>
+				</div>
+							
+				<div class="row">	
+					<div class="col-sm-4 form-group">
+						<label for="administrador">Grupos</label>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" id="administrador" value="1">
+						  <label class="form-check-label" for="administrador">Administrador</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" id="vendedor" value="2">
+						  <label class="form-check-label" for="vendedor">Vendedor</label>
+						</div>
+					</div>
+				</div>
+							
+				<div class="form-group">
+					<button class="btn  btn-primary" type="submit">Salvar</button>
+				</div>
+				
+			</form>
+
+		</div>
+	</section>
+</body>
+</html>
